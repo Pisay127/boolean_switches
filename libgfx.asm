@@ -72,3 +72,12 @@ gx_rect_h:
   cmpv gx_y, gx_y2, ax
   jl gx_rect_v
   ret
+
+; Okay, our own code starts here.
+draw_rect macro top_left_x, top_left_y, bottom_right_x, bottom_right_y
+    movv gx_x1, top_left_x
+    movv gx_y1, top_left_y
+    movv gx_x2, bottom_right_x
+    movv gx_y2, bottom_right_y
+    call gx_rect
+endm

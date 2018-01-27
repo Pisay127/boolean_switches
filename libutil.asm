@@ -7,6 +7,16 @@ movv macro to, from
   pop to
 endm
 
+mov_byte_vars macro to, from
+    save_registers
+
+    mov dl, from
+    mov to, dl
+
+    restore_registers
+endm
+
+
 ; Compare two memory variables
 cmpv macro var1, var2, register
   mov register, var1
